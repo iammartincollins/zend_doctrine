@@ -1,5 +1,5 @@
 <?php
-
+ini_set('display_errors', 1);
 // Define path to application directory
 defined('APPLICATION_PATH')
     || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/../application'));
@@ -13,6 +13,8 @@ set_include_path(implode(PATH_SEPARATOR, array(
     realpath(APPLICATION_PATH . '/../vendor/zendframework/zendframework1/library'),
     get_include_path(),
 )));
+
+require_once APPLICATION_PATH.'/../vendor/autoload.php';
 
 /** Zend_Application */
 require_once 'Zend/Application.php';
