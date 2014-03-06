@@ -26,11 +26,10 @@ class CategoryController extends Zend_Controller_Action
 		$query 	->select('c')
 				->from('Application_Model_Category', 'c')
 				->where('c.id = ?1')
-				->orderBy('c.id', 'DESC')
 				->setParameter(1, $id);
 
 		$query = $query->getQuery();
-		$this->view->categories = $query->getResult();
+		$this->view->category = $query->getResult();
 	}
 
 }

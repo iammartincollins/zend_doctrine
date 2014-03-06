@@ -1,9 +1,9 @@
 <?php
-echo "Page: " . $this->msg . "<br/>";
-
-foreach ($this->categories as $category) {
-	echo "<h1>" .$category->getName() . " (id: " . $category->getId() . ")</h1>";
+foreach ($this->category as $cat) {
+	echo "<h1>" .$cat->getName() . "</h1>";
+	foreach ($cat->getProducts() as $product) {
+		echo "	" . $product->getName() . "<br/>";
+	}
 	echo "<br/>";
 }
-
 ?>

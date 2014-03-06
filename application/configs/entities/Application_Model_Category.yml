@@ -9,3 +9,7 @@ Application_Model_Category:
     fields:
         name:
             type: string
+    manyToMany:
+        products:
+            targetEntity: Application_Model_Product
+            mappedBy: categories
