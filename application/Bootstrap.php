@@ -42,5 +42,19 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         return $em;
     }
 
+    public function _initRoute()
+    {    
+            $route = new Zend_Controller_Router_Route(
+            'category/:id',
+            array(
+                'controller' => 'category',
+                'action'     => 'get'
+            )
+        );
+        
+        $router = Zend_Controller_Front::getInstance()->getRouter();
+        $router->addRoute('cat', $route);
+    }
+
 }
 

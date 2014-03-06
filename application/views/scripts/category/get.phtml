@@ -1,0 +1,9 @@
+<?php
+echo "Page: " . $this->msg . "<br/>";
+
+foreach ($this->categories as $category) {
+	echo "<h1>" .$category->getName() . " (id: " . $category->getId() . ")</h1>";
+	echo "<br/>";
+}
+
+?>
