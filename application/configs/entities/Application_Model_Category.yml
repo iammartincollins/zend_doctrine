@@ -3,9 +3,9 @@ Application_Model_Category:
     table: category
     id:
         id: 
-        type: integer
-        generator:
-            strategy: AUTO
+            type: integer
+            generator:
+                strategy: AUTO
     fields:
         name:
             type: string

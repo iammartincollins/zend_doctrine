@@ -1,10 +1,10 @@
 <p><?php echo $this->hello ?></p>
 <?php
 foreach ($this->products as $product) {
-	echo $product->getName() . " (" . $product->getId() . ") - " . $product->getDescription() . " - &#163;" . $product->getPrice() . "\n";
-	echo "	Categories:\n";
+	echo $product->getName() . " (" . $product->getId() . ") - " . $product->getDescription() . " - &#163;" . $product->getPrice() . "<br/>";
+	echo "	<strong>Categories:</strong> <br/>";
 	foreach ($product->getCategories() as $category) {
-		echo "	" . $category->getName() . "\n";
+		echo "	" . $category->getName() . "<br/>";
 	}
-	echo "\n";
+	echo "<br/>";
 } ?>

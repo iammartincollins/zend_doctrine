@@ -8,14 +8,15 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
      * @return Doctrine\ORM\EntityManager
      */
     protected function _initDoctrine()
-    {
-        array_map(function($loader) {
+    {        
+        array_map(function($loader) {            
             $loader->register();
         }, array(
             new Doctrine\Common\ClassLoader('Doctrine\DBAL'),
             new Doctrine\Common\ClassLoader('Doctrine\Common'),
             new Doctrine\Common\ClassLoader('Doctrine\ORM'),
             new Doctrine\Common\ClassLoader('Symfony', 'Doctrine'),
+            new Doctrine\Common\ClassLoader('App', 'Application\Models'),
         ));
 
         $options = $this->getOptions();
@@ -26,7 +27,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         //$config->setMetadataCacheImpl($cache);
         //$config->setResultCacheImpl($cache);
         $config->setAutoGenerateProxyClasses($options['proxy']['autoGenerate']);
-        $config->setProxyDir(APPLICATION_PATH . '/application/models');
+        $config->setProxyDir(APPLICATION_PATH . '/application/models/Proxy'); // /Proxy here?
         $config->setProxyNamespace('Proxy');
         $config->setMetadataDriverImpl(
             new Doctrine\ORM\Mapping\Driver\YamlDriver(
