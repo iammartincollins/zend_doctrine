@@ -21,10 +21,10 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $options = $this->getOptions();
         $options = $options['doctrine'];
 
-        $cache  = new $options['cache']['class'];
+        //$cache  = new $options['cache']['class'];
         $config = new Doctrine\ORM\Configuration();
-        $config->setMetadataCacheImpl($cache);
-        $config->setResultCacheImpl($cache);
+        //$config->setMetadataCacheImpl($cache);
+        //$config->setResultCacheImpl($cache);
         $config->setAutoGenerateProxyClasses($options['proxy']['autoGenerate']);
         $config->setProxyDir(APPLICATION_PATH . '/application/models');
         $config->setProxyNamespace('Proxy');

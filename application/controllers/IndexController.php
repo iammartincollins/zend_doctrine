@@ -11,10 +11,13 @@ class IndexController extends Zend_Controller_Action
     public function indexAction()
     {
     	//temporary just to test getting data from db
-    	$dql = "SELECT p FROM Product p ORDER BY p.id DESC";
-		$query = $em->createQuery($dql);
-		$query->setMaxResults(30);
+        $products = new Application_Model_Product();
+        $categories = new Application_Model_Category();
+        $dql = "SELECT p FROM Application_Model_Product p ORDER BY p.id DESC";
+        $query = Zend_Registry::get('em')->createQuery($dql);
+        $query->setMaxResults(30);
 
+        //echo var_dump($query);
 		$this->view->products = $query->getResult();
 		$this->view->hello = "World!";
     }

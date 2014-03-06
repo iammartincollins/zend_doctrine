@@ -1,24 +1,10 @@
 <?php
-/**
- * @Entity(repositoryClass="ProductRepository")
- * @Table(name="category")
- */
-class Category {
-	/**
-	 * @Id
-	 * @Column(type="integer")
-	 * @GeneratedValue
-	 */
-	protected $id;
-	/**
-	 * @Column(type="string", name="name")
-	 */
-	protected $name;
 
-	///**
- 	//* @ManyToMany(targetEntity="Product")
-    //*/ 
-	// protected $products; //FK
+class Application_Model_Category {
+
+	protected $id;
+
+	protected $name;
 
 	public function getId()
 	{
@@ -30,8 +16,8 @@ class Category {
 		return $this->name;
 	}
 	
-	public function setName($name)
-	{
-		$this->name = $name;
-	}
+	// public function setName($name)
+	// {
+	// 	$this->name = $name;
+	// }
 }
