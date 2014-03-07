@@ -17,19 +17,19 @@ class CategoryController extends Zend_Controller_Action
 	{
 		$request = $this->getRequest();
 		$id = $request->getParam('id');
-		$this->view->msg = $id;
+		//$this->view->msg = $id;
 
+		$this->view->category = Zend_Registry::get('em')->getRepository('Application_Model_Category')->getCategory($id);
 
+		// $query = Zend_Registry::get('em')->createQueryBuilder();
 
-		$query = Zend_Registry::get('em')->createQueryBuilder();
+		// $query 	->select('c')
+		// 		->from('Application_Model_Category', 'c')
+		// 		->where('c.id = ?1')
+		// 		->setParameter(1, $id);
 
-		$query 	->select('c')
-				->from('Application_Model_Category', 'c')
-				->where('c.id = ?1')
-				->setParameter(1, $id);
-
-		$query = $query->getQuery();
-		$this->view->category = $query->getResult();
+		// $query = $query->getQuery();
+		// $this->view->category = $query->getSingleResult(); //use getResult instead for more than 1 result
 	}
 
 }

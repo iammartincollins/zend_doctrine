@@ -1,5 +1,6 @@
 Application_Model_Category:
     type: entity
+    repositoryClass: Application_Model_CategoryRepository
     table: category
     id:
         id: 

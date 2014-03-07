@@ -1,5 +1,6 @@
 Application_Model_Product:
     type: entity
+    repositoryClass: Application_Model_ProductRepository
     table: products
     id:
         id:

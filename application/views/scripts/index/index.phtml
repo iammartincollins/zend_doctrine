@@ -1,10 +1,9 @@
-<p><?php echo $this->hello ?></p>
+<h2>Martin's special offers</h2>
 <?php
 foreach ($this->products as $product) {
-	echo $product->getName() . " (" . $product->getId() . ") - " . $product->getDescription() . " - &#163;" . $product->getPrice() . "<br/>";
-	echo "	<strong>Categories:</strong> <br/>";
-	foreach ($product->getCategories() as $category) {
-		echo "	" . $category->getName() . "<br/>";
+		echo "<h3>" . 		$product->getName() . "</h3>";
+		echo "<ul><li>" . 	$product->getDescription() . "</li>";
+		echo "<li>&#163;" . 		$product->getPrice() . "</li></ul>";
 	}
-	echo "<br/>";
-} ?>
+
+?>
