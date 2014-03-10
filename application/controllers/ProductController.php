@@ -17,7 +17,6 @@ class ProductController extends Zend_Controller_Action
 	{
 		$request = $this->getRequest();
 		$id = $request->getParam('id');
-		//$this->view->msg = $id;
 
 		$this->view->product = Zend_Registry::get('em')->getRepository('Application_Model_Product')->getProduct($id);
 	}
