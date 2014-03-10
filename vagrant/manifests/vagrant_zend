@@ -1,0 +1,10 @@
+<VirtualHost *:80>
+  ServerName ecommerce.vm
+  DocumentRoot /var/www/public
+  <Directory /var/www/public>
+    Options Indexes FollowSymLinks Multiviews
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+  </Directory>
+</VirtualHost>
