@@ -1,9 +1,14 @@
+<?php $this->headTitle()->append('Home'); ?>
 <h2>Martin's special offers</h2>
-<?php
-foreach ($this->products as $product) {
-		echo "<div class='a-product'><h3>" . 		$product->getName() . "</h3>";
-		echo "<ul><li>" . 	$product->getDescription() . "</li>";
-		echo "<li>&#163;" . 		$product->getPrice() . "</li></ul></div>";
-	}
-
-?>
+<div class="row">
+<?php foreach ($this->products as $product) : ?>
+	<div class="a-product col-lg-4">
+		<a href="/product/<?php echo $product->getId() ?>">
+			<img src="<?php echo $product->getImage() ?>" alt="">
+			<h3><?php echo $product->getName() ?></h3>
+		</a>
+			<p><?php echo $product->getDescription() ?></p>
+			<h4 class="pull-right">Only &#163;<?php echo $product->getPrice() ?></h4>
+	</div>
+<?php endforeach; ?>
+</div>

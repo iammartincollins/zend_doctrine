@@ -1,14 +1,24 @@
-    <?php echo $this->doctype() ?>
+    <?php echo $this->doctype('HTML5') ?>
     <html>
     <head>
         <meta charset="UTF-8">
-        <?php echo $this->headTitle() ?>
-        <?php echo $this->headLink() ?>
+        <?php echo $this->headTitle("Martin's Mobiles")->setSeparator(' | ') ?>
+        <?php echo $this->headLink()->appendStylesheet('http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css') ?>
+        <?php echo $this->headLink()->appendStylesheet('/css/styles.css') ?>
         <?php echo $this->headStyle() ?>
         <?php echo $this->headScript() ?>
     </head>
     <body>
-        <h1>Martin's Mobiles</h1>
-        <?php echo $this->layout()->content ?>
+        <div class="container">
+
+            <div class="page-header">
+                <a href="/"><h1>Martin's Mobiles <small>You better buy my mobiles...</small></h1></a>
+            </div>
+            <?php echo $this->layout()->content ?>
+        </div>
+        <footer class="container">
+            <hr>
+            <h1 class="pull-right"><small>...or else</small></h1>
+        </footer>
     </body>
     </html>

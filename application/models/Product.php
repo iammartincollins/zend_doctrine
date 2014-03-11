@@ -22,6 +22,12 @@ class Application_Model_Product {
 	protected $description;
 
 	/**
+	 * Product image
+	 * @var string
+	 */
+	protected $image;
+
+	/**
 	 * Category price
 	 * @var decimal(6,2)
 	 */
@@ -61,6 +67,11 @@ class Application_Model_Product {
 	public function getName()
 	{
 		return $this->name;
+	}
+	
+	public function getImage()
+	{
+		return $this->image;
 	}
 	
 	// public function setName($name)

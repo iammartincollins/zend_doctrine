@@ -12,6 +12,8 @@ Application_Model_Product:
             type: string
         description:
             type: string
+        image:
+            type: string
         price:
             type: decimal
             precision: 6

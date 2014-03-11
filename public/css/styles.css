@@ -1,0 +1,12 @@
+body {
+	background: #F0F0F0;
+}
+
+.container {
+	background: white;
+	padding-bottom: 50px;
+}
+
+.a-product > p {
+	max-height: 80px;
+}

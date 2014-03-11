@@ -1,8 +1,11 @@
-<?php
-	echo "<h2 class='cat-title'>" .$this->category->getName() . " category</h2>";
-	foreach ($this->category->getProducts() as $product) {
-		echo "<h3>" . 		$product->getName() 		. "</h3>";
-		echo "<ul><li>" . 	$product->getDescription() 	. "</li>";
-		echo "<li>&#163;" . $product->getPrice() 		. "</li></ul>";
-	}
-?>
+<?php $this->headTitle()->append($this->category->getName()); ?>
+<h2 class='cat-title'><?php echo $this->category->getName() ?> category</h2><hr>
+<div class="row">
+	<?php foreach ($this->category->getProducts() as $product) : ?>
+		<div class="a-product col-lg-4">
+			<h3><a href="/product/<?php echo $product->getId() ?>"><?php echo $product->getName() ?></a></h3>
+			<p><?php echo $product->getDescription() ?></p>
+			<h4 class="pull-right">&#163;<?php echo $product->getPrice() ?></h4>
+		</div>
+	<?php endforeach; ?>
+</div>
