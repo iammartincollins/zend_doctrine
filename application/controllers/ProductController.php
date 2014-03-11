@@ -13,6 +13,14 @@ class ProductController extends Zend_Controller_Action
 		$this->view->msg = "index action";
 	}
 
+	/**
+     * getAction
+     *
+     * Stores the data from a product and sends to view
+     *
+     * @access public
+     * @return void
+     */
 	public function getAction()
 	{
 		$request = $this->getRequest();

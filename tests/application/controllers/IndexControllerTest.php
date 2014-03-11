@@ -1,14 +1,17 @@
 <?php
 
-class IndexControllerTest extends Zend_Test_PHPUnit_ControllerTestCase
+class IndexControllerTest extends ControllerTestCase
 {
+	function testIndexReachable()
+	{
+		$this->disPatch('/');
+		$this->assertResponseCode(200);
+	}
 
-    public function setUp()
-    {
-        $this->bootstrap = new Zend_Application(APPLICATION_ENV, APPLICATION_PATH . '/configs/application.ini');
-        parent::setUp();
-    }
-
-
+	function testIndexGetsHighlightedProducts()
+	{
+		$this->disPatch('/');
+		$this->assertQueryCount('div.a-product', 3);
+	}
 }
 

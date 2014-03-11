@@ -1,8 +1,8 @@
 <?php
-	echo "<h2>" .$this->category->getName() . " category</h2>";
+	echo "<h2 class='cat-title'>" .$this->category->getName() . " category</h2>";
 	foreach ($this->category->getProducts() as $product) {
-		echo "<h3>" . 		$product->getName() . "</h3>";
-		echo "<ul><li>" . 	$product->getDescription() . "</li>";
-		echo "<li>&#163;" . 		$product->getPrice() . "</li></ul>";
+		echo "<h3>" . 		$product->getName() 		. "</h3>";
+		echo "<ul><li>" . 	$product->getDescription() 	. "</li>";
+		echo "<li>&#163;" . $product->getPrice() 		. "</li></ul>";
 	}
 ?>

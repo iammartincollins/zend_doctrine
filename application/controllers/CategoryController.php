@@ -12,6 +12,14 @@ class CategoryController extends Zend_Controller_Action
 	{
 	}
 
+	/**
+     * getAction
+     *
+     * Stores the data from an category and sends to view
+     *
+     * @access public
+     * @return void
+     */
 	public function getAction()
 	{
 		$request = $this->getRequest();

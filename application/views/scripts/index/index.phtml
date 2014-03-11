@@ -1,9 +1,9 @@
 <h2>Martin's special offers</h2>
 <?php
 foreach ($this->products as $product) {
-		echo "<h3>" . 		$product->getName() . "</h3>";
+		echo "<div class='a-product'><h3>" . 		$product->getName() . "</h3>";
 		echo "<ul><li>" . 	$product->getDescription() . "</li>";
-		echo "<li>&#163;" . 		$product->getPrice() . "</li></ul>";
+		echo "<li>&#163;" . 		$product->getPrice() . "</li></ul></div>";
 	}
 
 ?>

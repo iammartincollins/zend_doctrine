@@ -3,14 +3,34 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 class Application_Model_Product {
 
+	/**
+	 * Product ID
+	 * @var integer
+	 */
 	protected $id;
 
+	/**
+	 * Product name
+	 * @var string
+	 */
 	protected $name;
 
+	/**
+	 * Product description
+	 * @var string
+	 */
 	protected $description;
 
+	/**
+	 * Category price
+	 * @var decimal(6,2)
+	 */
 	protected $price;
 
+	/**
+	 * Categories that product is a part of
+	 * @var ArrayCollection
+	 */
 	protected $categories; //FK
 	
 	public function __construct()

@@ -6,7 +6,11 @@ use Doctrine\ORM\EntityRepository;
 */
 class Application_Model_ProductRepository extends EntityRepository
 {
-	
+	/**
+	 * Retrieves a product from the db
+	 * @param  integer $id product ID
+	 * @return product object
+	 */
 	function getProduct($id)
 	{
 		$query = Zend_Registry::get('em')->createQueryBuilder();
@@ -20,6 +24,13 @@ class Application_Model_ProductRepository extends EntityRepository
 		return $query->getSingleResult();
 	}
 	
+	/**
+	 * Gets 3 products from the db
+	 * @param  integer $id1 ID of first product
+	 * @param  integer $id2 ID of second product
+	 * @param  integer $id3 ID of third product
+	 * @return array of product objects
+	 */
 	function getRandomProducts($id1, $id2, $id3)
 	{
 		$query = Zend_Registry::get('em')->createQueryBuilder();
