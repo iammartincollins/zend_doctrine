@@ -15,6 +15,6 @@ class ProductControllerTest extends ControllerTestCase
 	{
 		$this->dispatch('/product/4');
 
-		$this->assertQueryContentContains("h2", "BlackBerry_5991");
+		$this->assertQueryCount('h2.prod-title', 1);; //make check for prod-title in h2
 	}
 }

@@ -11,11 +11,11 @@ class CategoryControllerTest extends ControllerTestCase
 		$this->assertResponseCode(200);
 	}
 
-	function testGetProduct()
+	function testGetCategory()
 	{
 		$this->dispatch('/category/2');
 
 		$this->assertQueryCount('h2.cat-title', 1);
-		$this->assertQueryContentContains("h2", "Topsellers category");
+		$this->assertQueryContentContains("h2", "category");
 	}
 }
