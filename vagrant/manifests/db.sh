@@ -1,7 +1,8 @@
 echo "composer update"
 cd /var/www/
 curl -sS https://getcomposer.org/installer | php
-php composer.phar install
+php composer.phar install --dev
+php composer.phar update --dev
 echo "creating database"
 mysql -u root -pDBP@ss -h localhost -Bse "CREATE DATABASE orm_task;"
 echo "writing to db"
