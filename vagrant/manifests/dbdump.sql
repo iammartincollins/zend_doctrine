@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: orm_task
 -- ------------------------------------------------------
--- Server version	5.5.35-0ubuntu0.12.04.2
+-- Server version 5.5.35-0ubuntu0.12.04.2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -14,6 +14,7 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
 --
 -- Table structure for table `category`
 --
@@ -25,7 +26,7 @@ CREATE TABLE `category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -34,7 +35,7 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'Nokias'),(2,'Topsellers');
+INSERT INTO `category` VALUES (1,'Headphones'),(2,'iPhone Cases'),(3,'Speakers');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -62,7 +63,7 @@ CREATE TABLE `product_category` (
 
 LOCK TABLES `product_category` WRITE;
 /*!40000 ALTER TABLE `product_category` DISABLE KEYS */;
-INSERT INTO `product_category` VALUES (3,1),(3,2),(4,1),(5,1),(5,2);
+INSERT INTO `product_category` VALUES (3,1),(4,1),(5,2),(6,2),(7,3);
 /*!40000 ALTER TABLE `product_category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,8 +79,9 @@ CREATE TABLE `products` (
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `price` decimal(6,2) NOT NULL,
+  `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -88,7 +90,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (3,'Nokia1234','anewernokia',89.99),(4,'BlackBerry_5991','Business_phone',199.99),(5,'Iphone8','notyetreleased',798.99);
+INSERT INTO `products` VALUES (3,'Noosy Earpods with Mic and Remote','The Noosy Earpods are designed to ensure high quality audio while being extremely comfortable to wear. Designed to work with Apple devices, including iPods, iPads and iPhones.',9.99,'http://images.mobilefun.co.uk/graphics/300pixelp/noosy-earpods-with-mic-and-remote-p44012-300.jpg'),(4,'Nokia WH-920 Purity In-Ear Stereo Headphones - Black','Experience superior sound quality with the premium in-ear Nokia Stereo Headphones in Black',89.95,'http://images.mobilefun.co.uk/graphics/300pixelp/nokia-wh-920-purity-in-ear-stereo-headphones-black-p32797-300.jpg'),(5,'Iphone8Draco Design Aluminium Bumper for the iPhone 5S / 5 - Red','Give your iPhone 5S / 5 the ultimate style and protection with this Aircraft grade Aluminium bumper in red.',59.99,'http://images.mobilefun.co.uk/graphics/300pixelp/draco-design-aluminium-bumper-for-the-iphone-5s-5-red-p36598-300.jpg'),(6,'Spigen SGP Tough Armor Case for iPhone 5S','The SGP Tough Armor Case in champagne gold is the ultimate protective case for the iPhone 5S / 5, providing superb impact absorption due to Spigens air cushion technology.',19.99,'http://images.mobilefun.co.uk/graphics/300pixelp/spigen-sgp-tough-armor-case-for-iphone-5s-5-champagne-gold-p41325-300.jpg'),(7,'BoomBrick Wireless Bluetooth Speaker - Black','Enjoy rich and powerful sound without the need for wires with the stylish and portable BoomBrick Wireless Bluetooth Speaker in black',29.99,'http://images.mobilefun.co.uk/graphics/300pixelp/boombrick-wireless-bluetooth-speaker-black-p41906-300.jpg');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -101,4 +103,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-03-10  9:53:15
+-- Dump completed on 2014-03-12 10:43:41
