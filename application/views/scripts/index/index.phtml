@@ -8,7 +8,10 @@
 			<h3><?php echo $product->getName() ?></h3>
 		</a>
 			<p><?php echo $product->getDescription() ?></p>
-			<h4 class="pull-right">Only &#163;<?php echo $product->getPrice() ?></h4>
+            <div class="pull-right">
+			<h4 class="pull-right"><strong>&nbsp;Now only &#163;<?php echo $product->getPrice() ?></strong></h4>
+            <h4 class="st pull-right text-muted">Was &#163;<?php echo round($product->getPrice() * 1.3) - 0.01 ?> </h4>
+        </div>
 	</div>
 <?php endforeach; ?>
 </div>

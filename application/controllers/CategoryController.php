@@ -10,6 +10,7 @@ class CategoryController extends Zend_Controller_Action
 
 	public function indexAction()
 	{
+        $this->view->categories = Zend_Registry::get('em')->getRepository('Application_Model_Category')->getCategories();
 	}
 
 	/**

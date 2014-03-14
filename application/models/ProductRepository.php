@@ -21,7 +21,7 @@ class Application_Model_ProductRepository extends EntityRepository
 				->setParameter(1, $id);
 
 		$query = $query->getQuery();
-		return $query->getSingleResult();
+		return $query->getOneOrNullResult();
 	}
 	
 	/**
@@ -31,7 +31,7 @@ class Application_Model_ProductRepository extends EntityRepository
 	 * @param  integer $id3 ID of third product
 	 * @return array of product objects
 	 */
-	function getRandomProducts($id1, $id2, $id3)
+	function getSomeProducts($id1, $id2, $id3)
 	{
 		$query = Zend_Registry::get('em')->createQueryBuilder();
 

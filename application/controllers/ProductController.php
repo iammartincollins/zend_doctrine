@@ -10,7 +10,7 @@ class ProductController extends Zend_Controller_Action
 
 	public function indexAction()
 	{
-		$this->view->msg = "index action";
+		
 	}
 
 	/**
@@ -23,10 +23,15 @@ class ProductController extends Zend_Controller_Action
      */
 	public function getAction()
 	{
-		$request = $this->getRequest();
-		$id = $request->getParam('id');
+		$id = $this->getRequest()->getParam('id');
 
-		$this->view->product = Zend_Registry::get('em')->getRepository('Application_Model_Product')->getProduct($id);
+        $product = Zend_Registry::get('em')->getRepository('Application_Model_Product')->getProduct($id);
+
+        if ($product) {
+            $this->view->product = $product;
+        } else {
+            $this->_redirect('/product/');
+        }
 	}
 
 }

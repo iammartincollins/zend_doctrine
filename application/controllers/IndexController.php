@@ -18,7 +18,7 @@ class IndexController extends Zend_Controller_Action
      */
     public function indexAction()
     {
-        $this->view->products = Zend_Registry::get('em')->getRepository('Application_Model_Product')->getRandomProducts(3, 4, 5);
+        $this->view->products = Zend_Registry::get('em')->getRepository('Application_Model_Product')->getSomeProducts(3, 4, 5);
     }
 
 

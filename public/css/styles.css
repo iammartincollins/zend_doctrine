@@ -10,3 +10,7 @@ body {
 .a-product > p {
 	max-height: 80px;
 }
+
+.st {
+    text-decoration: line-through;
+}

@@ -1,3 +1,8 @@
-<?php
-echo "Page : " . $this->msg;
-?>
+<?php $this->headTitle()->append('Categories'); ?>
+<ul class="list-group">
+    <?php foreach ($this->categories as $category) : ?>
+    <li class="list-group-item">
+        <h3><a href="/category/<?php echo $category->getId() ?>"><?php echo $category->getName() ?></a></h3>
+    </li>
+    <?php endforeach; ?>
+</ul>

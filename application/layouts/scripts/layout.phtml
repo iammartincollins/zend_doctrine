@@ -11,9 +11,19 @@
     <body>
         <div class="container">
 
-            <div class="page-header">
-                <a href="/"><h1>Martin's Mobiles <small>You better buy my mobiles...</small></h1></a>
-            </div>
+            <!-- <div class="page-header"> -->
+                <a href="/"><h1>Martin's Mobiles <small>You better buy my mobiles...</small></h1></a><hr>
+                <ul class="nav nav-pills pull-left">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/category">Categories</a></li>
+                </ul>
+                <ul class="nav nav-pills pull-right">
+                    <li><a href="/">My account</a></li>
+                    <li><a href="/category">Log out</a></li>
+                </ul>
+                <div class="clearfix"></div>
+                <hr>
+            <!-- </div> -->
             <?php echo $this->layout()->content ?>
         </div>
         <footer class="container">
