@@ -1,0 +1,9 @@
+<a href="/product/<?php echo $this->id ?>">
+    <img src="<?php echo $this->image ?>" alt="">
+    <h3><?php echo $this->name ?></h3>
+</a>
+<p><?php echo $this->description ?></p>
+<div class="pull-right">
+    <h4 class="pull-right"><strong>&nbsp;Now only &#163;<?php echo $this->price ?></strong></h4>
+    <h4 class="st pull-right text-muted">Was &#163;<?php echo round($this->price * 1.3) - 0.01 ?> </h4>
+</div>

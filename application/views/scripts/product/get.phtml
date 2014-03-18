@@ -1,14 +1,16 @@
 <?php $this->headTitle()->append($this->product->getName()); ?>
 <div class="row">
-	<div class="col-lg-4">
-		<img src="<?php echo $this->product->getImage() ?>" alt="">
+	<div class="col-lg-4 imgbox">
+		<img class="prod-img" src="<?php echo $this->product->getImage() ?>" alt="">
 	</div>
-	<div class="col-lg-5">
-		<h2 class="prod-title"><?php echo $this->product->getName() ?></h2><hr>
-		<p><?php echo $this->product->getDescription() ?></p>
+	<div class="col-lg-5 panel panel-default">
+		<div class="panel-body">
+			<h2 class="prod-title"><?php echo $this->product->getName() ?></h2>
+			<p><?php echo $this->product->getDescription() ?></p>
+		</div>
 	</div>
 	<div class="col-lg-3">
-		<div class="pull-right">
+		<div class="pull-right price-box">
 			<h3>Only &#163;<?php echo $this->product->getPrice() ?></h3>
 			<div class="btn-group">
 				<button class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plus"></span> Add to basket</button>

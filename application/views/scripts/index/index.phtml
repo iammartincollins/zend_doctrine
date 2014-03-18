@@ -3,15 +3,12 @@
 <div class="row">
 <?php foreach ($this->products as $product) : ?>
 	<div class="a-product col-lg-4">
-		<a href="/product/<?php echo $product->getId() ?>">
-			<img src="<?php echo $product->getImage() ?>" alt="">
-			<h3><?php echo $product->getName() ?></h3>
-		</a>
-			<p><?php echo $product->getDescription() ?></p>
-            <div class="pull-right">
-			<h4 class="pull-right"><strong>&nbsp;Now only &#163;<?php echo $product->getPrice() ?></strong></h4>
-            <h4 class="st pull-right text-muted">Was &#163;<?php echo round($product->getPrice() * 1.3) - 0.01 ?> </h4>
-        </div>
+		<?php echo $this->partial('productsInList.phtml', array(
+        'id'            => $product->getId(),
+        'image'         => $product->getImage(),
+        'name'          => $product->getName(),
+        'price'         => $product->getPrice(),
+        'description'   => $product->getDescription())); ?>
 	</div>
 <?php endforeach; ?>
 </div>
