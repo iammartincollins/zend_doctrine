@@ -2,13 +2,13 @@
 <h2>Martin's special offers</h2>
 <div class="row">
 <?php foreach ($this->products as $product) : ?>
-	<div class="a-product col-lg-4">
-		<?php echo $this->partial('productsInList.phtml', array(
+    <div class="a-product col-lg-4">
+        <?php echo $this->partial('productsInList.phtml', array(
         'id'            => $product->getId(),
         'image'         => $product->getImage(),
         'name'          => $product->getName(),
         'price'         => $product->getPrice(),
         'description'   => $product->getDescription())); ?>
-	</div>
+    </div>
 <?php endforeach; ?>
 </div>

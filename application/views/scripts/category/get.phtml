@@ -1,14 +1,14 @@
 <?php $this->headTitle()->append($this->category->getName()); ?>
 <h2 class='cat-title'><?php echo $this->category->getName() ?> category</h2><hr>
 <div class="row">
-	<?php foreach ($this->category->getProducts() as $product) : ?>
-		<div class="a-product col-lg-4">
-			<a href="/product/<?php echo $product->getId() ?>">
+    <?php foreach ($this->category->getProducts() as $product) : ?>
+        <div class="a-product col-lg-4">
+            <a href="/product/<?php echo $product->getId() ?>">
                 <img src="<?php echo $product->getImage() ?>" alt="">
                 <h3><?php echo $product->getName() ?></h3>
             </a>
-			<p><?php echo $product->getDescription() ?></p>
-			<h4 class="pull-right">&#163;<?php echo $product->getPrice() ?></h4>
-		</div>
-	<?php endforeach; ?>
+            <p><?php echo $product->getDescription() ?></p>
+            <h4 class="pull-right">&#163;<?php echo $product->getPrice() ?></h4>
+        </div>
+    <?php endforeach; ?>
 </div>

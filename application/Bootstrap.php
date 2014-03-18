@@ -2,7 +2,7 @@
 
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
-	/**
+    /**
      * Initialises the ORM and DBAL.
      *
      * @return Doctrine\ORM\EntityManager

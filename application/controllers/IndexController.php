@@ -2,7 +2,14 @@
 
 class IndexController extends Zend_Controller_Action
 {
-
+    /**
+     * init
+     * 
+     * Inialise controller
+     *
+     * @access public
+     * @return void
+     */
     public function init()
     {
         /* Initialize action controller here */
@@ -20,7 +27,4 @@ class IndexController extends Zend_Controller_Action
     {
         $this->view->products = Zend_Registry::get('em')->getRepository('Application_Model_Product')->getSomeProducts(3, 4, 5);
     }
-
-
 }
-
